@@ -2,7 +2,7 @@
 #include "file_handler.h"
 #include "rsa.h"
 
-int chiffrer_fichier(char *source, char *destination, unsigned long long e, unsigned long long n) {
+int chiffrer_fichier(const char *source, const char *destination, unsigned long long e, unsigned long long n) {
     FILE *src = fopen(source, "rb"); // 'r' = lire, 'b' = binaire
     if (src == NULL) {
         printf("Erreur : impossible d'ouvrir %s\n", source);
@@ -32,7 +32,7 @@ int chiffrer_fichier(char *source, char *destination, unsigned long long e, unsi
     return 1;
 }
 
-int dechiffrer_fichier(char *source, char *destination, unsigned long long d, unsigned long long n) {
+int dechiffrer_fichier(const char *source, const char *destination, unsigned long long d, unsigned long long n) {
     FILE *src = fopen(source, "rb");
     if (src == NULL) {
         printf("Erreur : impossible d'ouvrir %s\n", source);
